@@ -43,6 +43,15 @@ public class EditController {
 
         name.setText(product.getName());
         amount.setText(Integer.toString(product.getAmount()));
+        if(product.isAvailable())
+        {
+            available.setSelected(true);
+        }
+        else
+        {
+            available.setSelected(false);
+        }
+        type.getSelectionModel().select(product.getType());
     }
 
     public boolean isOkClicked() {
